@@ -1,7 +1,13 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Web by ningshuanglu</title>
-
+    <meta charset='utf-8'>
+    <title>宁双路</title>
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/jquerymobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquerymobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+	
     <!-- baidu tongji //-->
 	<script>
 	var _hmt = _hmt || [];
@@ -13,11 +19,155 @@
 	})();
 	</script>
 
-
   </head>
   <body>
-        <h1>Web</h1>
-        <p>http://www.ningshuanglu.com</p>
+
+	<!-- home -->
+	<div data-role="page" id="home">
+		<div data-role="content">
+			<p><img src="res/png/ningshuanglu.png" alt="宁双路" width="300" height="200" align="middle"></p>
+			<h3>宁双路</h3>
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<a href="http://www.jqk6.com" data-role="button" data-theme="b" target="_blank">聚奇酷</a>
+				</div>
+				<div class="ui-block-b">
+					<a href="http://www.qiaochucheng.com" data-role="button" data-theme="b" target="_blank">翘楚城</a>
+				</div>
+			</div>
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="toolbar">
+			<div data-role="navbar">
+				<ul>
+					<li><a class="ui-btn-active" href="#home" data-icon="home" data-transition="fade">Home</a></li>
+					<li><a href="#sessions" data-icon="grid" data-transition="fade">Sessions</a></li>
+					<li><a href="#where" data-icon="info" data-transition="fade">Where</a></li>
+					<li><a href="#about" data-icon="star" data-transition="fade">About</a></li>
+					<li><a href="#feedback.html" data-icon="plus" data-rel="dialog">Feedback</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!-- sessions -->
+	<div data-role="page" id="sessions">
+		<div data-role="header">
+			<h1>Sessions</h1>
+			<a href="javascript:refresh();" data-icon="refresh" id="refresh" data-theme="c" class="ui-btn-left" data-iconpos="notext"></a>
+		</div>
+		<div data-role="content">
+			<p id="console"></p>
+			<ul data-role="list-view" data-inset="true" id="slots"></ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="toolbar">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home" data-transition="fade">Home</a></li>
+					<li><a class="ui-btn-active" href="#sessions" data-icon="grid" data-transition="fade">Sessions</a></li>
+					<li><a href="#where" data-icon="info" data-transition="fade">Where</a></li>
+					<li><a href="#about" data-icon="star" data-transition="fade">About</a></li>
+					<li><a href="#feedback.html" data-icon="plus" data-rel="dialog">Feedback</a></li>	
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- DETAILS -->
+	<div data-role="page" id="details" data-add-back-btn="true">
+		<div data-role="header">
+			<h1>Sessions details</h1>
+		</div>
+		<div data-role="content">
+			<div id="sessionInfo"> </div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="toolbar">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home" data-transition="fade">Home</a></li>
+					<li><a href="#sessions" data-icon="grid" data-transition="fade">Sessions</a></li>
+					<li><a href="#where" data-icon="info" data-transition="fade">Where</a></li>
+					<li><a href="#about" data-icon="star" data-transition="fade">About</a></li>
+					<li><a href="#feedback.html" data-icon="plus" data-rel="dialog">Feedback</a></li>	
+				</ul>
+			</div>
+		</div>		
+	</div>
+
+	<!-- PAGE -->
+	<div data-role="page" id="where">
+		<header data-role="header">
+			<h1>Where</h1>
+		</header>
+		<div role="content">
+			Hasta la vista 1234, ACME城
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="toolbar">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home" data-transition="fade">Home</a></li>
+					<li><a href="#sessions" data-icon="grid" data-transition="fade">Sessions</a></li>
+					<li><a class="ui-btn-active" href="#where" data-icon="info" data-transition="fade">Where</a></li>
+					<li><a href="#about" data-icon="star" data-transition="fade">About</a></li>
+					<li><a href="#feedback.html" data-icon="plus" data-rel="dialog">Feedback</a></li>	
+				</ul>
+			</div>
+		</div>		
+	</div>
+
+	<!-- ABOUT -->
+	<div id="about" data-role="page">
+		<header data-role="header">
+			<h1>About</h1>
+		</header>
+		<div data-role="content">
+			<div data-role="collapsible">
+				<h3>Orgnization</h3>
+				<p>This congress is organized by ACME</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Dates</h3>
+				<p>November 5th, 2015 9am to 6pm</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>History</h3>
+				<p>First edition of this congress was......</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Sponsors</h3>
+				<p><img src="http://file.bmob.cn/M01/9F/2D/oYYBAFWH3O-AHvqMAAA4X9SzbC8802.png" alt="Sponsers" align="middle"></p>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="toolbar">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home" data-transition="fade">Home</a></li>
+					<li><a href="#sessions" data-icon="grid" data-transition="fade">Sessions</a></li>
+					<li><a href="#where" data-icon="info" data-transition="fade">Where</a></li>
+					<li><a class="ui-btn-active" href="#about" data-icon="star" data-transition="fade">About</a></li>
+					<li><a href="#feedback.html" data-icon="plus" data-rel="dialog">Feedback</a></li>	
+				</ul>
+			</div>
+		</div>		
+	</div>
+
+	<!-- ios -->
+	<div data-role="page" id="ios">
+		<div data-role="header">
+			<h1>installation</h1>
+		</div>
+		<div data-role="content">
+			<p id="consoleInstall">installation</p>
+			<div id="install">
+				<p>
+					To finish the installation, you must add this webapp to your 
+					Home Screen. To do that, touch the arrow and select "Add to 
+					Home Screen"
+				</p>
+			</div>
+			<a href="javascript:openWithoutInstallation()" class="openWithoutInstall">Open without installation</a>
+		</div>
+	</div>
 
   </body>
 </html>
